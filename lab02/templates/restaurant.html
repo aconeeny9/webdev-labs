@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8"><title>Top Restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Restaurant</title>
+    <style>
+        section {
+            box-sizing: border-box;
+            border: solid 1px #d0d3d9;
+            width: 50vh;
+            height: 75vh;
+            margin: 20px;
+        }
+
+        h2, p {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        p {
+            border-bottom: solid 1px #d0d3d9;
+            padding-bottom: 10px;
+        }
+
+        img {
+            height: 50%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body box-sizing= "border-box">
+    {% include 'includes/header.html' %}
+
+    <main>
+        <section>
+            <h2>{{restaurant.get('name') }}</h2>
+            <img id="restaurant" src={{restaurant.get('image_url')}} alt="Picture of Restaurant"/>
+            <p>{{restaurant.get('display_address')}}</p>
+            <p>Price: <b>{{restaurant.get('price')}}</b></p>
+            <p>Rating: <b>{{restaurant.get('rating')}}</b></p>
+            <p>Number of reviews: <b>{{restaurant.get('review_count')}}</b></p>
+        </section>
+
+    </main>
+</body>
+</html>
+
